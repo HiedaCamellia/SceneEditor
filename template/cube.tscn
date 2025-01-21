@@ -1,12 +1,114 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7v4yuwqas3wv"]
+[gd_scene load_steps=8 format=3 uid="uid://b7v4yuwqas3wv"]
+
+[ext_resource type="Script" path="res://template/Cube.cs" id="1_ou5mh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uurn8"]
 
-[node name="Cube" type="Node3D"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_hu0rf"]
+size = Vector2(1, 1)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[sub_resource type="QuadMesh" id="QuadMesh_ltg1v"]
+orientation = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_i36aa"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ekgfj"]
+orientation = 0
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_xqsgq"]
+vertices = PackedVector3Array(-0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5, 0.5, 1, -0.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_radius = 0.0
+agent_max_climb = 10.0
+region_min_size = 1.0
+region_merge_size = 1.0
+edge_max_error = 1.0
+detail_sample_distance = 1.0
+
+[node name="Cube" type="Node3D"]
+script = ExtResource("1_ou5mh")
+metadata/top = true
+metadata/bottom = true
+metadata/north = true
+metadata/east = true
+metadata/west = true
+metadata/south = true
+metadata/Nav = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_uurn8")
+
+[node name="top" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_hu0rf")
+
+[node name="bottom" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.5, 0)
+mesh = SubResource("PlaneMesh_hu0rf")
+
+[node name="north" type="CSGMesh3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 0, 0)
+mesh = SubResource("QuadMesh_ltg1v")
+
+[node name="east" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+mesh = SubResource("QuadMesh_i36aa")
+
+[node name="west" type="CSGMesh3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
+mesh = SubResource("QuadMesh_i36aa")
+
+[node name="south" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+mesh = SubResource("QuadMesh_ekgfj")
+
+[node name="Nav" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+navigation_mesh = SubResource("NavigationMesh_xqsgq")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Nav/NavigationRegion3D"]
+visible = false
+layers = 8
+sorting_offset = 1.0
+sorting_use_aabb_center = false
+
+[node name="LinkWest" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(0, 0, -1)
+
+[node name="LinkEast" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(0, 0, 1)
+
+[node name="LinkSouth" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(1, 0, 0)
+
+[node name="LinkNorth" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(-1, 0, 0)
+
+[node name="LinkTop" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(0, 1, 0)
+
+[node name="LinkBottom" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(0, -1, 0)

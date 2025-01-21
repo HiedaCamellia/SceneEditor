@@ -110,5 +110,15 @@ public partial class Perspective : Camera3D
             editor.changeDelMode();
             GetViewport().SetInputAsHandled();
         }
+        if (@event.IsActionPressed("navigation"))
+        {
+            editor.changeNavMode();
+            GetViewport().SetInputAsHandled();
+        }
+        if (@event.IsActionPressed("connect"))
+        {
+            editor.changeConMode();
+            GetViewport().SetInputAsHandled();
+        }
     }
 }

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfxigt3sybx6n"]
+
+[ext_resource type="Script" path="res://Navigater.cs" id="1_8q7dv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cplk2"]
+margin = 0.01
+size = Vector3(0.1, 1, 0.1)
+
+[node name="Nav" type="Node3D"]
+metadata/isNav = true
+
+[node name="Navigater" type="CharacterBody3D" parent="."]
+collision_mask = 0
+script = ExtResource("1_8q7dv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Navigater"]
+shape = SubResource("BoxShape3D_cplk2")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Navigater"]
+path_desired_distance = 0.1
+path_postprocessing = 1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Navigater"]
+layers = 64
+sorting_offset = 10.0
+sorting_use_aabb_center = false
+size = Vector3(0.5, 1, 0.5)

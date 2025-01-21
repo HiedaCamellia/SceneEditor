@@ -19,6 +19,7 @@ script = ExtResource("3_2rto2")
 
 [node name="CameraRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -1)
+collision_mask = 15
 hit_back_faces = false
 debug_shape_custom_color = Color(0, 1, 0, 1)
 debug_shape_thickness = 5
@@ -74,6 +75,63 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "添加"
 
+[node name="rotation" type="HBoxContainer" parent="UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="X" type="SpinBox" parent="UI/VBoxContainer/rotation"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../Z")
+min_value = -1000.0
+max_value = 1000.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Y" type="SpinBox" parent="UI/VBoxContainer/rotation"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../X")
+focus_neighbor_right = NodePath("../Z")
+min_value = -1000.0
+max_value = 1000.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Z" type="SpinBox" parent="UI/VBoxContainer/rotation"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Y")
+min_value = -1000.0
+max_value = 1000.0
+allow_greater = true
+allow_lesser = true
+
+[node name="visible" type="HBoxContainer" parent="UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="east" type="CheckBox" parent="UI/VBoxContainer/visible"]
+layout_mode = 2
+text = "东"
+
+[node name="south" type="CheckBox" parent="UI/VBoxContainer/visible"]
+layout_mode = 2
+text = "南"
+
+[node name="west" type="CheckBox" parent="UI/VBoxContainer/visible"]
+layout_mode = 2
+text = "西"
+
+[node name="north" type="CheckBox" parent="UI/VBoxContainer/visible"]
+layout_mode = 2
+text = "北"
+
+[node name="top" type="CheckBox" parent="UI/VBoxContainer/visible"]
+layout_mode = 2
+text = "顶"
+
+[node name="bottom" type="CheckBox" parent="UI/VBoxContainer/visible"]
+layout_mode = 2
+text = "底"
+
 [node name="Size" type="HSlider" parent="UI/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -118,6 +176,70 @@ text = "导入为样板"
 unique_name_in_owner = true
 layout_mode = 2
 text = "导出"
+
+[node name="navposition" type="HBoxContainer" parent="UI/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="X" type="SpinBox" parent="UI/VBoxContainer/navposition"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../Z")
+min_value = -100000.0
+max_value = 100000.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Y" type="SpinBox" parent="UI/VBoxContainer/navposition"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../X")
+focus_neighbor_right = NodePath("../Z")
+min_value = -100000.0
+max_value = 100000.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Z" type="SpinBox" parent="UI/VBoxContainer/navposition"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Y")
+min_value = -100000.0
+max_value = 100000.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Nav" type="Button" parent="UI/VBoxContainer/navposition"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "寻路"
+
+[node name="navvisible" type="HBoxContainer" parent="UI/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="east" type="CheckBox" parent="UI/VBoxContainer/navvisible"]
+layout_mode = 2
+text = "东"
+
+[node name="south" type="CheckBox" parent="UI/VBoxContainer/navvisible"]
+layout_mode = 2
+text = "南"
+
+[node name="west" type="CheckBox" parent="UI/VBoxContainer/navvisible"]
+layout_mode = 2
+text = "西"
+
+[node name="north" type="CheckBox" parent="UI/VBoxContainer/navvisible"]
+layout_mode = 2
+text = "北"
+
+[node name="top" type="CheckBox" parent="UI/VBoxContainer/navvisible"]
+layout_mode = 2
+text = "顶"
+
+[node name="bottom" type="CheckBox" parent="UI/VBoxContainer/navvisible"]
+layout_mode = 2
+text = "底"
 
 [node name="sight" type="Sprite2D" parent="UI"]
 texture = ExtResource("6_i8r5b")

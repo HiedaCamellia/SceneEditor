@@ -1,7 +1,7 @@
-﻿using Godot;
+using Godot;
 using System;
 
-public partial class Sprite2d : Sprite2D
+public partial class sight : Sprite2D
 {
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

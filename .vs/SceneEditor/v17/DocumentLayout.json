@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Documents\\sceneEditor\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|c:\\users\\administrator\\documents\\sceneeditor\\sight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|solutionrelative:sight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|c:\\users\\administrator\\documents\\sceneeditor\\editor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|solutionrelative:editor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|c:\\users\\administrator\\documents\\sceneeditor\\perspective.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|solutionrelative:perspective.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,50 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "sight.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\sceneEditor\\sight.cs",
-              "RelativeDocumentMoniker": "sight.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\sceneEditor\\sight.cs",
-              "RelativeToolTip": "sight.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T15:18:24.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Editor.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\sceneEditor\\Editor.cs",
-              "RelativeDocumentMoniker": "Editor.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\sceneEditor\\Editor.cs",
-              "RelativeToolTip": "Editor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHkAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T11:55:41.846Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Perspective.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\sceneEditor\\Perspective.cs",
-              "RelativeDocumentMoniker": "Perspective.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\sceneEditor\\Perspective.cs",
-              "RelativeToolTip": "Perspective.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAQwG0AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T11:23:59.183Z",
-              "EditorCaption": ""
             }
           ]
         }
