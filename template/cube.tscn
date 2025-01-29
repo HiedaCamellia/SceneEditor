@@ -34,6 +34,12 @@ metadata/east = true
 metadata/west = true
 metadata/south = true
 metadata/Nav = false
+metadata/LkWest = Vector3(0, 0, 0)
+metadata/LkEast = Vector3(0, 0, 0)
+metadata/LkSouth = Vector3(0, 0, 0)
+metadata/LkNorth = Vector3(0, 0, 0)
+metadata/LkTop = Vector3(0, 0, 0)
+metadata/LkBottom = Vector3(0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

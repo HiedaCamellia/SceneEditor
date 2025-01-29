@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Documents\\sceneEditor\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Documents\\sceneEditor\\editor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|c:\\users\\administrator\\documents\\sceneeditor\\editor\\navigater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|solutionrelative:navigater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|c:\\users\\administrator\\documents\\sceneeditor\\editor\\template\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|solutionrelative:template\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|c:\\users\\administrator\\documents\\sceneeditor\\editor\\editor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B32AFDBE-F7C6-4792-8E4F-47B69E63CDB3}|SceneEditor.csproj|solutionrelative:editor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cube.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\sceneEditor\\editor\\template\\Cube.cs",
+              "RelativeDocumentMoniker": "template\\Cube.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\sceneEditor\\editor\\template\\Cube.cs",
+              "RelativeToolTip": "template\\Cube.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAwCUAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T14:59:56.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Editor.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\sceneEditor\\editor\\Editor.cs",
+              "RelativeDocumentMoniker": "Editor.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\sceneEditor\\editor\\Editor.cs",
+              "RelativeToolTip": "Editor.cs",
+              "ViewState": "AgIAAPUAAAAAAAAAAAAgwAQBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T14:45:39.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Navigater.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\sceneEditor\\editor\\Navigater.cs",
+              "RelativeDocumentMoniker": "Navigater.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\sceneEditor\\editor\\Navigater.cs",
+              "RelativeToolTip": "Navigater.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T14:34:34.543Z",
+              "EditorCaption": ""
             }
           ]
         }
