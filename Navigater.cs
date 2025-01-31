@@ -102,10 +102,8 @@ public partial class Navigater : CharacterBody3D
 
     private void Jump()
     {
-        //如果下一个target的移动不是沿坐标轴进行的，就是视差移动，直接跳转过去
         var n =_lastPostion.DirectionTo(_targetPostion);
-        if (n.Y == 0) return;
-        if (n.X == 0 && n.Z == 0) return;
+        if (n.X < 1e-6 || n.Y < 1e-6 || n.Z < 1e-6) return;
 
         GlobalPosition = _targetPostion;
     }

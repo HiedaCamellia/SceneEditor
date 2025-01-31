@@ -99,42 +99,42 @@ using Godot; using System; using System.IO; using System.Numerics; using
     {
         if (Selected != null && !top.Disabled)
         {
-            Selected.GetNode<CsgMesh3D>("top").Visible = bt;
+            Selected.GetNode<Node3D>("top").Visible = bt;
             Selected.SetMeta("top", bt);
         }
     }     public void changeBottomVsi(bool bt)
     {
         if (Selected != null && !bottom.Disabled)
         {
-            Selected.GetNode<CsgMesh3D>("bottom").Visible = bt;
+            Selected.GetNode<Node3D>("bottom").Visible = bt;
             Selected.SetMeta("bottom", bt);
         }
     }     public void changeEastVsi(bool bt)
     {
         if (Selected != null && !east.Disabled)
         {
-            Selected.GetNode<CsgMesh3D>("east").Visible = bt;
+            Selected.GetNode<Node3D>("east").Visible = bt;
             Selected.SetMeta("east", bt);
         }
     }     public void changeWestVsi(bool bt)
     {
         if (Selected != null && !west.Disabled)
         {
-            Selected.GetNode<CsgMesh3D>("west").Visible = bt;
+            Selected.GetNode<Node3D>("west").Visible = bt;
             Selected.SetMeta("west", bt);
         }
     }     public void changeSouthVsi(bool bt)
     {
         if (Selected != null && !south.Disabled)
         {
-            Selected.GetNode<CsgMesh3D>("south").Visible = bt;
+            Selected.GetNode<Node3D>("south").Visible = bt;
             Selected.SetMeta("south", bt);
         }
     }     public void changeNorthVsi(bool bt)
     {
         if (Selected != null && !north.Disabled)
         {
-            Selected.GetNode<CsgMesh3D>("north").Visible = bt;
+            Selected.GetNode<Node3D>("north").Visible = bt;
             Selected.SetMeta("north", bt);
         }
     }
@@ -180,12 +180,12 @@ using Godot; using System; using System.IO; using System.Numerics; using
         navtop.Toggled += changeNavTopVsi;         navbottom.Toggled += changeNavBottomVsi;         navnorth.Toggled += changeNavNorthVsi;         navsouth.Toggled += changeNavSouthVsi;         naveast.Toggled += changeNavEastVsi;         navwest.Toggled += changeNavWestVsi;          nav.Pressed += Nav;     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)     {         if (isColliding)         {             if (rayCast.GetCollider() is PhysicsBody3D body)             {                 Node3D node = body.GetParent<Node3D>();                 if (node != Collider)                 {                     Collider = node;                     p = false;                 }                 if (!p && !isSelected)                 {                     var pos = Collider.Position;                     xPosition.Value = pos.X;                     yPosition.Value = pos.Y;                     zPosition.Value = pos.Z;                     var rot = Collider.RotationDegrees;                     xRotation.Value = rot.X;                     yRotation.Value = rot.Y;                     zRotation.Value = rot.Z;                     testNode(node);                     if (!top.Disabled) top.SetPressedNoSignal(Collider.GetNode<CsgMesh3D>("top").Visible);
-                    if (!bottom.Disabled) bottom.SetPressedNoSignal(Collider.GetNode<CsgMesh3D>("bottom").Visible);
-                    if (!east.Disabled) east.SetPressedNoSignal(Collider.GetNode<CsgMesh3D>("east").Visible);
-                    if (!west.Disabled) west.SetPressedNoSignal(Collider.GetNode<CsgMesh3D>("west").Visible);
-                    if (!south.Disabled) south.SetPressedNoSignal(Collider.GetNode<CsgMesh3D>("south").Visible);
-                    if (!north.Disabled) north.SetPressedNoSignal(Collider.GetNode<CsgMesh3D>("north").Visible);
+    public override void _Process(double delta)     {         if (isColliding)         {             if (rayCast.GetCollider() is PhysicsBody3D body)             {                 Node3D node = body.GetParent<Node3D>();                 if (node != Collider)                 {                     Collider = node;                     p = false;                 }                 if (!p && !isSelected)                 {                     var pos = Collider.Position;                     xPosition.Value = pos.X;                     yPosition.Value = pos.Y;                     zPosition.Value = pos.Z;                     var rot = Collider.RotationDegrees;                     xRotation.Value = rot.X;                     yRotation.Value = rot.Y;                     zRotation.Value = rot.Z;                     testNode(node);                     if (!top.Disabled) top.SetPressedNoSignal(Collider.GetNode<Node3D>("top").Visible);
+                    if (!bottom.Disabled) bottom.SetPressedNoSignal(Collider.GetNode<Node3D>("bottom").Visible);
+                    if (!east.Disabled) east.SetPressedNoSignal(Collider.GetNode<Node3D>("east").Visible);
+                    if (!west.Disabled) west.SetPressedNoSignal(Collider.GetNode<Node3D>("west").Visible);
+                    if (!south.Disabled) south.SetPressedNoSignal(Collider.GetNode<Node3D>("south").Visible);
+                    if (!north.Disabled) north.SetPressedNoSignal(Collider.GetNode<Node3D>("north").Visible);
                     if (Collider.HasMeta("Nav"))
                     {
                         if (!navtop.Disabled) navtop.SetPressedNoSignal(Collider.GetNode<Node3D>("Nav").GetNode<NavigationLink3D>("LinkTop").Visible);

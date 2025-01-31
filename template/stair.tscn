@@ -1,0 +1,258 @@
+[gd_scene load_steps=9 format=3 uid="uid://cn0gmlrdqhje1"]
+
+[ext_resource type="Script" path="res://template/Stair.cs" id="1_k72yn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_in5bh"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v7t03"]
+size = Vector2(1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_e050b"]
+orientation = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_kn416"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_fofup"]
+orientation = 0
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_n31fc"]
+vertices = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_radius = 0.0
+agent_max_climb = 10.0
+agent_max_slope = 60.0
+region_min_size = 1.0
+region_merge_size = 1.0
+edge_max_error = 1.0
+detail_sample_distance = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jbd5b"]
+size = Vector2(1, 1)
+
+[node name="stair" type="Node3D"]
+script = ExtResource("1_k72yn")
+metadata/top = true
+metadata/bottom = true
+metadata/north = true
+metadata/east = true
+metadata/west = true
+metadata/south = true
+metadata/Nav = false
+metadata/LkWest = Vector3(0, 0, 0)
+metadata/LkEast = Vector3(0, 0, 0)
+metadata/LkSouth = Vector3(0, 0, 0)
+metadata/LkNorth = Vector3(0, 0, 0)
+metadata/LkTop = Vector3(0, 0, 0)
+metadata/LkBottom = Vector3(0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_in5bh")
+
+[node name="top" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062, 0, 0)
+
+[node name="top1" type="CSGMesh3D" parent="top"]
+transform = Transform3D(0.125, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+mesh = SubResource("PlaneMesh_v7t03")
+
+[node name="top2" type="CSGMesh3D" parent="top"]
+transform = Transform3D(0.125, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 0.375, 0)
+mesh = SubResource("PlaneMesh_v7t03")
+
+[node name="top3" type="CSGMesh3D" parent="top"]
+transform = Transform3D(0.125, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.25, 0)
+mesh = SubResource("PlaneMesh_v7t03")
+
+[node name="top4" type="CSGMesh3D" parent="top"]
+transform = Transform3D(0.125, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, 0.125, 0)
+mesh = SubResource("PlaneMesh_v7t03")
+
+[node name="top5" type="CSGMesh3D" parent="top"]
+transform = Transform3D(0.125, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_v7t03")
+
+[node name="top6" type="CSGMesh3D" parent="top"]
+transform = Transform3D(0.125, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, -0.125, 0)
+mesh = SubResource("PlaneMesh_v7t03")
+
+[node name="top7" type="CSGMesh3D" parent="top"]
+transform = Transform3D(0.125, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, -0.25, 0)
+mesh = SubResource("PlaneMesh_v7t03")
+
+[node name="top8" type="CSGMesh3D" parent="top"]
+transform = Transform3D(0.125, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, -0.375, 0)
+mesh = SubResource("PlaneMesh_v7t03")
+
+[node name="bottom" type="Node3D" parent="."]
+
+[node name="bottom" type="CSGMesh3D" parent="bottom"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.5, 0)
+mesh = SubResource("PlaneMesh_v7t03")
+
+[node name="north" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.062, 0)
+
+[node name="north1" type="CSGMesh3D" parent="north"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 0.125, 0, 1.50996e-07, 0, -1, 0.375, 0.5, 0)
+mesh = SubResource("QuadMesh_e050b")
+
+[node name="north2" type="CSGMesh3D" parent="north"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 0.125, 0, 1.50996e-07, 0, -1, 0.25, 0.375, 0)
+mesh = SubResource("QuadMesh_e050b")
+
+[node name="north3" type="CSGMesh3D" parent="north"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 0.125, 0, 1.50996e-07, 0, -1, 0.125, 0.25, 0)
+mesh = SubResource("QuadMesh_e050b")
+
+[node name="north4" type="CSGMesh3D" parent="north"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 0.125, 0, 1.50996e-07, 0, -1, 0, 0.125, 0)
+mesh = SubResource("QuadMesh_e050b")
+
+[node name="north5" type="CSGMesh3D" parent="north"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 0.125, 0, 1.50996e-07, 0, -1, -0.125, 0, 0)
+mesh = SubResource("QuadMesh_e050b")
+
+[node name="north6" type="CSGMesh3D" parent="north"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 0.125, 0, 1.50996e-07, 0, -1, -0.25, -0.125, 0)
+mesh = SubResource("QuadMesh_e050b")
+
+[node name="north7" type="CSGMesh3D" parent="north"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 0.125, 0, 1.50996e-07, 0, -1, -0.375, -0.25, 0)
+mesh = SubResource("QuadMesh_e050b")
+
+[node name="north8" type="CSGMesh3D" parent="north"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 0.125, 0, 1.50996e-07, 0, -1, -0.5, -0.375, 0)
+mesh = SubResource("QuadMesh_e050b")
+
+[node name="east" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062, 0, 0)
+
+[node name="east1" type="CSGMesh3D" parent="east"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 1, 0, 1.88745e-08, 0, -1, 0.5, 0, 0.5)
+flip_faces = true
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="east2" type="CSGMesh3D" parent="east"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.875, 0, 1.88745e-08, 0, -1, 0.375, -0.062, 0.5)
+flip_faces = true
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="east3" type="CSGMesh3D" parent="east"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.75, 0, 1.88745e-08, 0, -1, 0.25, -0.125, 0.5)
+flip_faces = true
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="east4" type="CSGMesh3D" parent="east"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.625, 0, 1.88745e-08, 0, -1, 0.125, -0.187, 0.5)
+flip_faces = true
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="east5" type="CSGMesh3D" parent="east"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.5, 0, 1.88745e-08, 0, -1, 0, -0.25, 0.5)
+flip_faces = true
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="east6" type="CSGMesh3D" parent="east"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.375, 0, 1.88745e-08, 0, -1, -0.125, -0.311887, 0.5)
+flip_faces = true
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="east7" type="CSGMesh3D" parent="east"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.25, 0, 1.88745e-08, 0, -1, -0.25, -0.375, 0.5)
+flip_faces = true
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="east8" type="CSGMesh3D" parent="east"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.125, 0, 1.88745e-08, 0, -1, -0.375, -0.434967, 0.5)
+flip_faces = true
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="west" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062, 0, 0)
+
+[node name="west1" type="CSGMesh3D" parent="west"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 1, 0, 1.88745e-08, 0, -1, 0.5, 0, -0.5)
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="west2" type="CSGMesh3D" parent="west"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.875, 0, 1.88745e-08, 0, -1, 0.375, -0.062, -0.5)
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="west3" type="CSGMesh3D" parent="west"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.75, 0, 1.88745e-08, 0, -1, 0.25, -0.125, -0.5)
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="west4" type="CSGMesh3D" parent="west"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.625, 0, 1.88745e-08, 0, -1, 0.125, -0.187, -0.5)
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="west5" type="CSGMesh3D" parent="west"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.5, 0, 1.88745e-08, 0, -1, 0, -0.25, -0.5)
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="west6" type="CSGMesh3D" parent="west"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.375, 0, 1.88745e-08, 0, -1, -0.125, -0.311887, -0.5)
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="west7" type="CSGMesh3D" parent="west"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.25, 0, 1.88745e-08, 0, -1, -0.25, -0.375, -0.5)
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="west8" type="CSGMesh3D" parent="west"]
+transform = Transform3D(-0.125, 0, -1.50996e-07, 0, 0.125, 0, 1.88745e-08, 0, -1, -0.375, -0.434967, -0.5)
+mesh = SubResource("QuadMesh_kn416")
+
+[node name="south" type="Node3D" parent="."]
+
+[node name="south" type="CSGMesh3D" parent="south"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+mesh = SubResource("QuadMesh_fofup")
+
+[node name="Nav" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Nav"]
+transform = Transform3D(0.997021, -0.707107, 0, 0.997021, 0.707107, 0, 0, 0, 1, 0.36, -0.362143, 0)
+navigation_mesh = SubResource("NavigationMesh_n31fc")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Nav/NavigationRegion3D"]
+visible = false
+mesh = SubResource("PlaneMesh_jbd5b")
+
+[node name="LinkWest" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(0, 0, -1)
+
+[node name="LinkEast" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(0, 0, 1)
+
+[node name="LinkSouth" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(1, 0, 0)
+
+[node name="LinkNorth" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(-1, 0, 0)
+
+[node name="LinkTop" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(0, 1, 0)
+
+[node name="LinkBottom" type="NavigationLink3D" parent="Nav"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+enabled = false
+end_position = Vector3(0, -1, 0)
